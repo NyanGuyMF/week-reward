@@ -1,0 +1,47 @@
+messages:
+  available-rewards: '&3&l>> &eУ Вас есть доступные награды! Нажмите: &6&o/get-reward'
+  available-rewards-on-hover: '&eВыполнить &6/get-reward'
+  empty-hand: '&eВозьмите желаемую награду в руки!'
+  got-rewards: '&eВы получили: {rewards-gotten}&e.'
+  invalid-tier: '&eНеверно указано место награды, список верных: {valid-tiers}&e.'
+  inventory-full: '&eВ вашем инвентаре нет свободных слотов, освободите место для награды.'
+  no-rewards: '&eУ Вас нет доступных наград.'
+  reward-list-delimiter: '&6, '
+  reward-list-prefix: '&c'
+  reward-set: '&eВы установили награду: &6{reward} &eдля &6{tier} &eместа.'
+  sender-not-player: '&cТолько игрок может выполнять эту команду.'
+  winner: '&6&lВы заняли &c&l{tier} &6&lместо по наигранным часам!'
+tiers:
+  '1':
+    v: 2584
+    type: ELYTRA
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: §d§lЭлитры
+      lore:
+        - §6Награда за первое место
+        - §6В рейтинге по наигранным часам
+      enchants:
+        MENDING: 1
+        DURABILITY: 3
+  '2':
+    v: 2584
+    type: NETHERITE_INGOT
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      lore:
+        - §6Награда за второе место
+        - §6В рейтинге по наигранным часам
+  '3':
+    v: 2584
+    type: BEACON
+    meta:
+      ==: ItemMeta
+      meta-type: TILE_ENTITY
+      display-name: §d§lМаяк
+      lore:
+        - §6Награда за третье место
+        - §6В рейтинге по наигранным часам
+      blockMaterial: BEACON

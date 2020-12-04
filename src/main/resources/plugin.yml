@@ -1,0 +1,12 @@
+name: ${project.name}
+version: ${project.version}
+main: voidpointer.spigot.weekreward.${project.name}Plugin
+api-version: 1.16
+authors: [ _voidpointer ]
+website: vk.me/voidpointer
+
+commands:
+  set-reward:
+    permission: 'weekreward.set-reward'
+  get-reward:
+    permission: 'weekreward.get-reward'
