@@ -39,6 +39,15 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>voidpointer.spigot.framework</pattern>
+                                    <shadedPattern>voidpointer.spigot.weekreward.framework</shadedPattern>
+                                    <includes>
+                                        <include>voidpointer.spigot.framework:locale-module</include>
+                                    </includes>
+                                </relocation>
+                            </relocations>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>
@@ -55,6 +64,10 @@
     </build>
 
     <repositories>
+        <repository>
+            <id>local-repo</id>
+            <url>http://localhost/repository/</url>
+        </repository>
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -77,6 +90,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.16</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>voidpointer.spigot.framework</groupId>
+            <artifactId>locale-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
