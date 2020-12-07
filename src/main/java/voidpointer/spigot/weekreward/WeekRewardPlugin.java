@@ -2,16 +2,16 @@ package voidpointer.spigot.weekreward;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import voidpointer.spigot.framework.localemodule.Locale;
+import voidpointer.spigot.framework.localemodule.config.LocaleFileConfiguration;
 import voidpointer.spigot.weekreward.command.GetRewardCommand;
 import voidpointer.spigot.weekreward.command.SetRewardCommand;
-import voidpointer.spigot.weekreward.config.LocaleConfig;
 import voidpointer.spigot.weekreward.config.PlayedTimeConfig;
 import voidpointer.spigot.weekreward.config.PluginConfig;
 import voidpointer.spigot.weekreward.event.PluginEventManager;
 import voidpointer.spigot.weekreward.listener.NewWeeklyWinnersListener;
 import voidpointer.spigot.weekreward.listener.PlayerJoinListener;
 import voidpointer.spigot.weekreward.listener.PlayerQuitListener;
-import voidpointer.spigot.weekreward.locale.Locale;
 import voidpointer.spigot.weekreward.task.GiveRewardWeeklyTask;
 
 import java.io.IOException;
@@ -35,7 +35,7 @@ public final class WeekRewardPlugin extends JavaPlugin {
             hasLoadErrors = true;
             return null;
         }).join();
-        locale = new LocaleConfig(getLogger(), getConfig().getConfigurationSection("messages"));
+        locale = new LocaleFileConfiguration(this);
         try {
             playedTimeConfig = new PlayedTimeConfig(this);
         } catch (IOException ioException) {

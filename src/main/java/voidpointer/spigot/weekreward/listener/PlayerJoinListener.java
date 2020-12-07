@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
-import voidpointer.spigot.weekreward.locale.Locale;
+import voidpointer.spigot.framework.localemodule.Locale;
 import voidpointer.spigot.weekreward.message.AvailableRewardMessageBuilder;
 import voidpointer.spigot.weekreward.reward.RewardQueueStorage;
 

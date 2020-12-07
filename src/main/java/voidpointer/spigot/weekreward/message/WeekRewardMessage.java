@@ -3,7 +3,7 @@ package voidpointer.spigot.weekreward.message;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import voidpointer.spigot.weekreward.locale.Message;
+import voidpointer.spigot.framework.localemodule.Message;
 
 @Getter
 @RequiredArgsConstructor

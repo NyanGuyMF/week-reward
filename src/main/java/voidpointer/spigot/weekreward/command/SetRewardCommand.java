@@ -10,8 +10,8 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import voidpointer.spigot.framework.localemodule.Locale;
 import voidpointer.spigot.weekreward.config.PluginConfig;
-import voidpointer.spigot.weekreward.locale.Locale;
 import voidpointer.spigot.weekreward.message.WeekRewardMessage;
 import voidpointer.spigot.weekreward.reward.RewardTier;
 import voidpointer.spigot.weekreward.reward.RewardTierConfig;
@@ -62,26 +62,26 @@ public final class SetRewardCommand implements CommandExecutor {
     }
 
     private void onSenderNotPlayer(final CommandSender sender) {
-        locale.getLocalized(WeekRewardMessage.SENDER_NOT_PLAYER)
+        locale.localize(WeekRewardMessage.SENDER_NOT_PLAYER)
                 .colorize()
                 .send(sender);
     }
 
     private void onEmptyHand(final CommandSender sender) {
-        locale.getLocalized(WeekRewardMessage.EMPTY_HAND)
+        locale.localize(WeekRewardMessage.EMPTY_HAND)
                 .colorize()
                 .send(sender);
     }
 
     private void onInvalidTier(final CommandSender sender, final String arg) {
-        locale.getLocalized(WeekRewardMessage.INVALID_TIER)
+        locale.localize(WeekRewardMessage.INVALID_TIER)
                 .colorize()
                 .set("{valid-tiers}", RewardTier.TIERS.keySet().stream().collect(Collectors.joining(", ")))
                 .send(sender);
     }
 
     private void onRewardSet(final CommandSender sender, final ItemStack rewardItem, final RewardTier rewardTier) {
-        locale.getLocalized(WeekRewardMessage.REWARD_SET)
+        locale.localize(WeekRewardMessage.REWARD_SET)
                 .colorize()
                 .set("{reward}", rewardItem.toString())
                 .set("{tier}", rewardTier.getTierPath())

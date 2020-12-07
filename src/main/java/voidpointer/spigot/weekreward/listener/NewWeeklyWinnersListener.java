@@ -9,8 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
+import voidpointer.spigot.framework.localemodule.Locale;
 import voidpointer.spigot.weekreward.event.NewWeeklyWinnersEvent;
-import voidpointer.spigot.weekreward.locale.Locale;
 import voidpointer.spigot.weekreward.message.AvailableRewardMessageBuilder;
 import voidpointer.spigot.weekreward.message.WeekRewardMessage;
 import voidpointer.spigot.weekreward.reward.RewardTier;
@@ -28,7 +28,7 @@ public final class NewWeeklyWinnersListener implements Listener {
             if (!winners.containsKey(player.getUniqueId()))
                 continue;
 
-            String message = locale.getLocalized(WeekRewardMessage.WINNER).colorize().getRawMessage();
+            String message = locale.localize(WeekRewardMessage.WINNER).colorize().getRawMessage();
             player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
             player.spigot().sendMessage(AvailableRewardMessageBuilder.build(locale));
         }

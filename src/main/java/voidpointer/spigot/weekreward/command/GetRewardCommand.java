@@ -10,15 +10,18 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.java.JavaPlugin;
+import voidpointer.spigot.framework.localemodule.Locale;
 import voidpointer.spigot.weekreward.config.PluginConfig;
-import voidpointer.spigot.weekreward.locale.Locale;
 import voidpointer.spigot.weekreward.message.WeekRewardMessage;
 import voidpointer.spigot.weekreward.reward.RewardQueue;
 import voidpointer.spigot.weekreward.reward.RewardQueueStorage;
 import voidpointer.spigot.weekreward.reward.RewardTier;
 import voidpointer.spigot.weekreward.reward.RewardTierConfig;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.UUID;
+
 
 @RequiredArgsConstructor
 public final class GetRewardCommand implements CommandExecutor {
@@ -58,8 +61,8 @@ public final class GetRewardCommand implements CommandExecutor {
     private String generateGottenRewardsMessage(final RewardQueue rewards, int rewardsNumberToReceive) {
         RewardTierConfig rewardTierConfig = config.getRewardTierConfig();
         StringBuilder message = new StringBuilder();
-        String rewardDelimiter = locale.getLocalized(WeekRewardMessage.REWARD_LIST_DELIMITER).getRawMessage();
-        String rewardPrefix = locale.getLocalized(WeekRewardMessage.REWARD_LIST_PREFIX).getRawMessage();
+        String rewardDelimiter = locale.localize(WeekRewardMessage.REWARD_LIST_DELIMITER).getRawMessage();
+        String rewardPrefix = locale.localize(WeekRewardMessage.REWARD_LIST_PREFIX).getRawMessage();
 
         Iterator<RewardTier> rewardsIterator = rewards.iterator();
         while (true) {
@@ -100,25 +103,25 @@ public final class GetRewardCommand implements CommandExecutor {
     }
 
     private void onSenderNotPlayer(final CommandSender sender) {
-        locale.getLocalized(WeekRewardMessage.SENDER_NOT_PLAYER)
+        locale.localize(WeekRewardMessage.SENDER_NOT_PLAYER)
                 .colorize()
                 .send(sender);
     }
 
     private void onNoRewards(final CommandSender sender) {
-        locale.getLocalized(WeekRewardMessage.NO_REWARDS)
+        locale.localize(WeekRewardMessage.NO_REWARDS)
                 .colorize()
                 .send(sender);
     }
 
     private void onInventoryFull(final CommandSender sender) {
-        locale.getLocalized(WeekRewardMessage.INVENTORY_FULL)
+        locale.localize(WeekRewardMessage.INVENTORY_FULL)
                 .colorize()
                 .send(sender);
     }
 
     private void onGotRewards(final CommandSender sender, final String rewardsGotten) {
-        locale.getLocalized(WeekRewardMessage.GOT_REWARDS)
+        locale.localize(WeekRewardMessage.GOT_REWARDS)
                 .set("{rewards-gotten}", rewardsGotten)
                 .colorize()
                 .send(sender);
