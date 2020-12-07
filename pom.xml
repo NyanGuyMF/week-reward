@@ -6,7 +6,7 @@
 
     <groupId>voidpointer.spigot</groupId>
     <artifactId>week-reward</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>WeekReward</name>
